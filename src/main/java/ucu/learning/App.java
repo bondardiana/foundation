@@ -122,7 +122,12 @@ public class App {
         try (final Connection conn = DriverManager.getConnection(dbUrl, "dbuser", "dbpassw0rd")) {
 
           
+            
             allPersons(conn).forEach(System.out::println);
+            System.out.println(insertPerson("Anna", "Maria", parser.parse("1994-05-07"), conn));
+            allPersons(conn).forEach(System.out::println);
+
+            
          
         }
     }
