@@ -1,0 +1,143 @@
+\documentclass[a4paper, 12pt, final]{hitec}
+\usepackage[T1]{fontenc} % this makes text underscore look better
+\usepackage{textcomp} % load symbol definitions
+\usepackage{underscore} % allows the use of _ in text without escaping
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
+\usepackage[parfill]{parskip}
+\usepackage{ragged2e}
+\usepackage{appendix}
+%\usepackage[none]{hyphenat}% enable to switch off hypenation
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+\usepackage{tabulary}
+\usepackage{longtable}
+\usepackage{inputenc}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[pdftex]{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{fancyvrb}
+
+% package animate is used for animating PNGs to mimic animated GIFs
+% the following command should be used to prepare PNGs from animated GIFs:
+% gifsicle --unoptimize animated.gif | convert - frame-%d.png
+\usepackage{animate}
+
+\usepackage{alltt}
+\usepackage{moreverb}
+\usepackage[singlelinecheck=false, justification=centering]{caption}
+\usepackage{booktabs,array}
+\newcolumntype{?}{!{\vrule width 1pt}}
+\makeatletter
+\def\thickhline{%
+  \noalign{\ifnum0=`}\fi\hrule \@height \thickarrayrulewidth \futurelet
+   \reserved@a\@xthickhline}
+\def\@xthickhline{\ifx\reserved@a\thickhline
+               \vskip\doublerulesep
+               \vskip-\thickarrayrulewidth
+             \fi
+      \ifnum0=`{\fi}}
+\makeatother
+
+\newlength{\thickarrayrulewidth}
+\setlength{\thickarrayrulewidth}{2\arrayrulewidth}
+% for more info on hyperref package see http://en.wikibooks.org/wiki/LaTeX/Packages/Hyperref
+\usepackage[pdftex,colorlinks=true,linkcolor=BlueViolet]{hyperref}
+
+\addto{\captionsenglish}{\renewcommand{\abstractname}{Executive Summary}}
+
+\usepackage{lastpage}
+
+\renewcommand{\baselinestretch}{1.1}
+
+%% important to have floats such as tables stick to the top if option [t!] is used
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+\let\footruleskip\undefined
+\usepackage{fancyhdr}
+
+
+
+\title{Layered Architecture: domain-driven approach}
+\author{Diana Bondar}
+\date{\today}
+\usepackage{hyperxmp}
+\hypersetup{
+    pdftitle={Layered Architecture: domain-driven approach},
+    pdfauthor={Diana Bondar},
+    pdfsubject={},
+    pdfcopyright={Copyright (C) 2019 by Diana.  All rights reserved.}
+}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+%\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+
+\captionsetup[table]{font=footnotesize, labelfont=bf}
+\captionsetup[figure]{font=footnotesize, labelfont=bf}
+\captionsetup[subfigure]{font=scriptsize, labelfont=bf}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT MARGINS
+%----------------------------------------------------------------------------------------
+
+%\textwidth 6.75in
+\textheight 25cm
+%\oddsidemargin -.25in
+%\evensidemargin -.25in
+\topmargin -1cm
+%\longindentation 0.50\textwidth
+%\parindent 0.2in
+
+
+
+%----------------------------------------------------------------------------------------
+%	TIKZ magic
+%----------------------------------------------------------------------------------------
+
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
+\newcommand*\keystroke[1]{%
+  \tikz[baseline=(key.base)]
+    \node[%
+      draw,
+      fill=white,
+      drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+      rectangle,
+      rounded corners=2pt,
+      inner sep=1pt,
+      line width=0.5pt,
+      font=\scriptsize\sffamily,
+      minimum width=1.2em
+    ](key) {#1\strut};
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	\onehalfspacing
+	\pagenumbering{roman}
+    \include{sections/00-toc/toc}
+    \pagenumbering{arabic}
+    \include{sections/01-chapter/chapter-01}
+\end{document}
+

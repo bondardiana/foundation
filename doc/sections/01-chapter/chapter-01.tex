@@ -1,0 +1,26 @@
+
+\textbf{Multilevel architecture} or \textbf{n-tier architecture} is a very useful and widely used approach in IT projects. It helps to physically separate processes such as presentation, application processing and database operations. For this, the project is divided into architectural patterns “layers”. Each layer represents its own specific task and solves issues only at its own level. The most popular layers are presentation, application, domain or business layer, and Data access layer or infrastructure layer.
+
+
+The \textbf{presentation layer} is responsible for the user interface and contains only classes that are responsible for interacting with the end user, interpreting his input and passing it down.
+
+The \textbf{application layer} defines requests and delegates them to lower layers. It contains the application logic and helps the request meet the functional requirements, helping to determinate the scenario. 
+
+The \textbf{domain level} stores all rules, all business logic, algorithms. The domain processes the request and drops it down a level.
+
+\textbf{Infrastructure level} contains classes that fulfill the technical requirements of the project. For example, database communications, information updates, SQL queries. 
+
+The peculiarity of multi layer architecture is that its layers should contain only those classes for which they are responsible and nothing more. Also, all levels have a decreasing dependence, it goes from the presentation layer down to the infrastructure level and nothing else. The infrastructure layer manages all the layers above it.
+
+The most common type of multi layer architecture is its three-tier representation , \textbf{Model-view-controller} or \textbf{MVC}. This software design pattern divides the program logic into three components: the view model and the controller.
+
+This pattern is made to separate the code for such tasks: the part of \textbf{receiving information from the user, processing information and issuing}. The \textbf{model} plays the role of a domain, it stores business logic, application algorithms. \textbf{View} is an analogue of performance. It is a user interface that shows the user what the model produces. The \textbf{controller} is the link between the model and the view. It takes input and passes update data from the user to the model, and manages the model-view interactions.
+
+\textbf{Layered architecture} is fairly easy to use and straightforward. Thanks to it, we can get consistency in projects and handle errors exclusively at the levels where they occur.
+Layered architecture allows for expansion; as the project grows, layers can be divided into more task-oriented ones. Without it, with the growth of the project, all the code would be mixed into a mess. Layered architecture helps you keep your code separate and structured. It is a time tested approach that preserves stability.
+
+The \textbf{disadvantage} of a layered architecture is the lack of dependencies in the opposite direction. Since dependencies are directed from top to bottom, but from bottom to top not.
+Layered architecture is not always the best solution, for some projects it will be too complex and resource-intensive. A lot of functionality is duplicated and data overheads.
+The more layers we have, the bigger probability to break down or lose the data. And the more layers we have the slower custom requirements are met. 
+
+For not sophisticated projects, it is recommended to use \textbf{Smart UI}. It is also part of Model-driven design, but is an anti-pattern to layered architecture. In Smart UI, the user interface is created using a GUI. The developer places controls on the surface and defines them as triggers for events that are processed in the associated code-behind file. This leads to disadvantages in software development, especially with regard to maintainability and extensibility; However, it is much less resource-intensive, both in terms of time and the learning ability of employees. It is also good to use Smart UI for prototyping and then making a complete implementation using a layered architecture.
