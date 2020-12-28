@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>helsinki</groupId>
+	<artifactId>airport</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>Helsinki Airport Asset Management Parent Project</name>
+	<description>This is parent POM project.</description>
+	<url>none</url>
+	<inceptionYear>2020</inceptionYear>
+	<organization>
+		<name>Helsinki Asset Management Pty. Ltd.</name>
+		<url>https://airport.helsinki.com.ua</url>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<platform.version>1.4.6-SNAPSHOT</platform.version>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+					<configuration>
+						<release>14</release>
+						<encoding>UTF-8</encoding>
+						<optimize>true</optimize>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+  <modules>
+    <module>airport-dao</module>
+    <module>airport-pojo-bl</module>
+    <module>airport-web-ui</module>
+    <module>airport-web-server</module>
+  </modules>
+</project>
